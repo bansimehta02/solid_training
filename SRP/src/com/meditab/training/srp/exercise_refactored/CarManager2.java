@@ -3,21 +3,20 @@ package com.meditab.training.srp.exercise;
 import java.util.Arrays;
 import java.util.List;
 
-public class CarManager
+public class CarManager2
 {
 	private List<Car> _carsDb = Arrays
 	        .asList(new Car("1", "Golf III", "Volkswagen"), new Car("2", "Multipla", "Fiat"),
 	            new Car("3", "Megane", "Renault"));
 	
-	public String getCarsNames()
+	public Car getBestCar()
     {
-        StringBuilder sb = new StringBuilder();
+        Car bestCar = null;
         for (Car car : _carsDb) {
-            sb.append(car.getBrand());
-            sb.append(" ");
-            sb.append(car.getModel());
-            sb.append(", ");
+            if (bestCar == null || car.getModel().compareTo(bestCar.getModel()) > 0) {
+                bestCar = car;
+            }
         }
-        return sb.substring(0, sb.length() - 2);
+        return bestCar;
     }
 }
