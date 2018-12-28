@@ -1,6 +1,6 @@
 package com.meditab.training.lsp.exercise;
 
-public class ElectronicDuck extends Duck
+public class ElectronicDuck implements source
 {
     private boolean _on = false;
 

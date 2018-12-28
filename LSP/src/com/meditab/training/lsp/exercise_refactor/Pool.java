@@ -2,14 +2,31 @@ package com.meditab.training.lsp.exercise;
 
 public class Pool
 {
+    public void run()
+    {
+        Duck donaldDuck = new Duck();
+        Duck electricDuck = new ElectronicDuck();
+        quack(donaldDuck, electricDuck);
+        swim(donaldDuck, electricDuck);
+    }
+
+    private void quack(Duck... ducks)
+    {
+        for (Duck duck : ducks) {
+            duck.quack();
+        }
+    }
+
+    private void swim(Duck... ducks)
+    {
+        for (Duck duck : ducks) {
+            duck.swim();
+        }
+    }
+
     public static void main(String[] args)
     {
         Pool pool = new Pool();
-        Duck donaldDuck = new Duck();
-        donaldDuck.quack();
-        donaldDuck.swim();
-        Duck electricDuck = new ElectronicDuck();
-        electricDuck.quack();
-        electricDuck.swim();
+        pool.run();
     }
 }
